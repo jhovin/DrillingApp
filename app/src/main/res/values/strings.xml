@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">DrillingApp</string>
+
+    <string name="sign_up">Registrar</string>
+    <string name="sign_in">Login</string>
+
+    <string name="name">Nombre</string>
+    <string name="email">Correo electrónico</string>
+    <string name="dni">DNI</string>
+    <string name="cargo">Cargo</string>
+    <string name="password">Password</string>
+    <string name="have_an_account">¿Ya tienes una cuenta?</string>
+    <string name="have_not_an_account">¿No tienes una cuenta? Registrate</string>
+
+    <string name="name_error">ingres un nombre</string>
+    <string name="name_error_no_update">error_mismo_nombre</string>
+    <string name="email_error">ingrese un email</string>
+    <string name="email_doesnt_match"> debe ser formato de correo</string>
+    <string name="email_error_no_update">error_mismo_email</string>
+    <string name="password_error">error_password</string>
+    <string name="password_error_less_than">Password debe ser mayor de 6 caracteres</string>
+
+    <string name="update_profile">Actualizar Profile</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="delete">Eliminar Usuario</string>
+    <string name="profile">Profile</string>
+
+</resources>
