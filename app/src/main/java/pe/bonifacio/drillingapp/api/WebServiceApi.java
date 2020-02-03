@@ -48,4 +48,18 @@ public interface WebServiceApi {
     @POST("api/proyectos_usuario")
     Call<List<Proyecto>> getProyectosUsuarios(@Body Usuario usuario);
 
+
+
+    /*
+      Asignaciones
+    */
+
+
+
+
+
+
+
+
+
 }

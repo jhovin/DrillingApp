@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import pe.bonifacio.drillingapp.R;
 import pe.bonifacio.drillingapp.api.WebService;
@@ -52,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userSignUp();
+
             }
         });
         tvLogin.setOnClickListener(new View.OnClickListener() {
@@ -144,8 +146,11 @@ public class SignUpActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.code() == 201) {
                     Log.d("TAG1", "Usuario guardado correctamente");
+                    Toast.makeText(SignUpActivity.this, "Usuario Guardado correctamente", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 } else if (response.code() == 409) {
                     Log.d("TAG1", "Usuario ya existe");
+                    Toast.makeText(SignUpActivity.this, "Usuario ya existe", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.d("TAG1", "error no definido");
                 }
@@ -162,6 +167,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onStart();
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
             Log.d("TAG1","Usuario se inicio correctamente");
+            startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
 
         }
     }

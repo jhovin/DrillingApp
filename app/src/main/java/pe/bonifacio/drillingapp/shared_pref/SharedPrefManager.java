@@ -12,7 +12,6 @@ public class SharedPrefManager {
     private static final String SHARED_PREFERENCES_NAME = "SHARED_PREFERENCES_NAME";
     private static final String SHARED_PREFERENCES_DNI = "SHARED_PREFERENCES_DNI";
     private static final String SHARED_PREFERENCES_CARGO = "SHARED_PREFERENCES_CARGO";
-    private static final String SHARED_PREFERENCES_FOTO = "SHARED_PREFERENCES_FOTO";
 
 
     private static SharedPrefManager instance;
@@ -39,7 +38,6 @@ public class SharedPrefManager {
         editor.putString(SHARED_PREFERENCES_DNI, usuario.getDni());
         editor.putString(SHARED_PREFERENCES_CARGO, usuario.getCargo());
         editor.putString(SHARED_PREFERENCES_EMAIL, usuario.getEmail());
-        editor.putString(SHARED_PREFERENCES_FOTO, usuario.getFoto());
         editor.apply();
     }
 
@@ -56,8 +54,8 @@ public class SharedPrefManager {
                 sharedPreferences.getString(SHARED_PREFERENCES_NAME,null),
                 sharedPreferences.getString(SHARED_PREFERENCES_DNI,null),
                 sharedPreferences.getString(SHARED_PREFERENCES_CARGO,null),
-                sharedPreferences.getString(SHARED_PREFERENCES_EMAIL,null),
-                sharedPreferences.getString(SHARED_PREFERENCES_FOTO,null)
+                sharedPreferences.getString(SHARED_PREFERENCES_EMAIL,null)
+
 
         );
         return usuario;

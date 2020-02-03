@@ -8,20 +8,19 @@ public class Usuario {
     private String email;
     private String dni;
     private String password;
-    private String foto;
 
 
     public Usuario() {
 
     }
 
-    public Usuario(Long id, String nombre,String dni ,String cargo, String email,String foto) {
+    public Usuario(Long id, String nombre,String dni ,String cargo, String email) {
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
         this.cargo = cargo;
         this.email = email;
-        this.foto = foto;
+
     }
 
     public Long getId() {
@@ -72,11 +71,4 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
 }

@@ -23,14 +23,14 @@ import retrofit2.Response;
 public class ProyectoActivity extends AppCompatActivity {
 
     private EditText etProyecto;
-    private EditText etGerente;
-    private EditText etCliente;
+    private EditText etFechaInicio;
+    private EditText etFechaFin;
     private EditText etDistrito;
     private EditText etProvincia;
     private EditText etDepartamento;
-    private EditText etTelefono;
 
-    private Button  btCrearProyecto;
+
+    private Button btCrearProyecto;
     private Button btVerTodosProyecto;
     private Button btVerProyectosUsuario;
     private Usuario usuario;
@@ -46,12 +46,11 @@ public class ProyectoActivity extends AppCompatActivity {
     public void setUpView() {
         usuario = SharedPrefManager.getInstance(getApplicationContext()).getUsuario();
         etProyecto = findViewById(R.id.etProyecto);
-        etGerente=findViewById(R.id.etGerente);
-        etCliente=findViewById(R.id.etCliente);
+        etFechaInicio=findViewById(R.id.etFecha_inicio);
+        etFechaFin=findViewById(R.id.etFecha_fin);
         etDistrito=findViewById(R.id.etDistrito);
         etProvincia=findViewById(R.id.etProvincia);
         etDepartamento=findViewById(R.id.etDepartamento);
-        etTelefono=findViewById(R.id.etTelefono);
         btCrearProyecto = findViewById(R.id.btCrearProyecto);
         btCrearProyecto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,11 +80,12 @@ public class ProyectoActivity extends AppCompatActivity {
     public void crearProyecto(){
         Proyecto proyecto=new Proyecto();
         proyecto.setNombre(etProyecto.getText().toString().toUpperCase().trim());
+        proyecto.setFecha_inicio(etFechaInicio.getText().toString().trim());
+        proyecto.setFecha_fin(etFechaFin.getText().toString().trim());
         proyecto.setDistrito(etDistrito.getText().toString().trim().toUpperCase());
         proyecto.setProvincia(etProvincia.getText().toString().trim().toUpperCase());
         proyecto.setDepartamento(etDepartamento.getText().toString().trim().toUpperCase());
         proyecto.setProusuario(usuario.getId());
-
         Call<Void> call = WebService
                 .getInstance()
                 .createService(WebServiceApi.class)

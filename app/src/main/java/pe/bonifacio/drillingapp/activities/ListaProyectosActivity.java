@@ -21,7 +21,6 @@ import retrofit2.Response;
 
 public class ListaProyectosActivity extends AppCompatActivity {
 
-
     private static final String TAG=ListaProyectosActivity.class.getSimpleName();
     private RecyclerView proyectosList;
 
@@ -77,5 +76,4 @@ public class ListaProyectosActivity extends AppCompatActivity {
     }
 
 }
-
 

@@ -1,14 +1,8 @@
 package pe.bonifacio.drillingapp.activities;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -16,9 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import android.widget.Toast;
 
 import pe.bonifacio.drillingapp.R;
 import pe.bonifacio.drillingapp.api.WebService;
@@ -42,18 +34,16 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView tvDato;
     private Button btUpdate;
     private Usuario usuario;
-    private Bitmap bitmap;
 
-    private static final int IMG_REQUEST=333;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        setUpProfesor();
+        setUpUsuario();
         setUpView();
     }
-    private void setUpProfesor(){
+    private void setUpUsuario(){
         usuario= SharedPrefManager.getInstance(getApplicationContext()).getUsuario();
 
     }
@@ -72,6 +62,17 @@ public class PerfilActivity extends AppCompatActivity {
         tvDelete=findViewById(R.id.tvDelete);
         tvLogOut=findViewById(R.id.tvLogOut);
 
+
+        //Proyectos
+        tvProyectos=findViewById(R.id.tvProyectos);
+        tvProyectos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ProyectoActivity.class));
+            }
+        });
+
+        //Cerrar Sesión
         tvLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,74 +94,7 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        //FOTO
-        ivUsuario=findViewById(R.id.imageView);
-        if(usuario.getFoto()!=null){
-            ivUsuario.setImageBitmap(stringToImage(usuario.getFoto()));
-        }
-        ivUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cambiarImagenPerfil();
-            }
-        });
-
-        tvProyectos=findViewById(R.id.tvProyectos);
-        tvProyectos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),ProyectoActivity.class));
-            }
-        });
-
     }
-
-    public void obtnerproyectos(){
-
-    }
-
-    //Cambiar foto de Perfil
-    private Bitmap stringToImage(String encondedString){
-        try{
-            byte[] encodeByte = Base64.decode(encondedString, Base64.DEFAULT);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            return bitmap;
-        }catch (Exception e){
-            return null;
-        }
-    }
-    private String imageToString(){
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 10, byteArrayOutputStream);
-        byte[] imgByte = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(imgByte, Base64.DEFAULT);
-    }
-
-    public void cambiarImagenPerfil(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, IMG_REQUEST);
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == IMG_REQUEST && resultCode == RESULT_OK && data != null){
-            Uri path = data.getData();
-            try{
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
-                if(bitmap != null){
-                    ivUsuario.setImageBitmap(bitmap);
-                    usuario.setFoto(imageToString());
-                }else{
-                    usuario.setFoto("");
-                }
-            }catch (IOException e){
-
-            }
-        }
-    }
-
 
     public void logout(){
         SharedPrefManager.getInstance(getApplicationContext()).logOut();
@@ -181,6 +115,7 @@ public class PerfilActivity extends AppCompatActivity {
     public void updateUsuario(){
         String email = etEmail.getText().toString().trim();
         String name = etName.getText().toString().trim();
+        String dni=etDni.getText().toString().trim().toUpperCase();
         String cargo=etCargo.getText().toString().trim().toUpperCase();
 
 
@@ -201,6 +136,16 @@ public class PerfilActivity extends AppCompatActivity {
             etEmail.requestFocus();
             return;
         }
+        if(dni.isEmpty()){
+            etDni.setError("Ingrese correcto tu dni");
+            etDni.requestFocus();
+            return;
+        }
+        if(dni.length()<8){
+            etDni.setError("Dni no debe ser menor a 8 digitos");
+            etDni.requestFocus();
+            return;
+        }
         if(cargo.isEmpty()){
             etCargo.setError("ingrese cargo");
             etCargo.requestFocus();
@@ -209,6 +154,7 @@ public class PerfilActivity extends AppCompatActivity {
         usuario.setNombre(name);
         usuario.setEmail(email);
         usuario.setCargo(cargo);
+        usuario.setDni(dni);
 
         Call<Usuario> call = WebService
                 .getInstance()
@@ -221,6 +167,8 @@ public class PerfilActivity extends AppCompatActivity {
                     Log.d("TAG1", "Usuario actualizado correctamente");
                     SharedPrefManager.getInstance(getApplicationContext())
                             .saveUsuario(response.body());
+                    Toast.makeText(PerfilActivity.this, "Usuario Actualizado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
                 }else if(response.code()==400){
                     Log.d("TAG1", "Usuario no existe");

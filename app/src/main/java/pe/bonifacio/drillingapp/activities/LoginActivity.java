@@ -112,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }else if (response.code()==404){
                     Log.d("TAG1", "Usuario no existe");
+                    Toast.makeText(LoginActivity.this, "Correo y/o clave inválido", Toast.LENGTH_SHORT).show();
                 }else{
                     Log.d("TAG1", "Error Desconocido");
                 }
