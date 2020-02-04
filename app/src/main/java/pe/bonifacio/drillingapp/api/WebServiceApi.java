@@ -2,6 +2,8 @@ package pe.bonifacio.drillingapp.api;
 
 import java.util.List;
 
+import pe.bonifacio.drillingapp.models.Informe;
+import pe.bonifacio.drillingapp.models.Maquina;
 import pe.bonifacio.drillingapp.models.Proyecto;
 import pe.bonifacio.drillingapp.models.Usuario;
 import retrofit2.Call;
@@ -51,8 +53,23 @@ public interface WebServiceApi {
 
 
     /*
-      Asignaciones
+      Maquinas
     */
+    
+    @POST("api/maquinas")
+    Call<Void>crearMaquina(@Body Maquina Maquina);
+
+    @GET("api/maquinas")
+    Call<List<Maquina>>getTodasLasMaquinas();
+
+       /*
+      Informes
+    */
+
+    @POST("api/informes")
+    Call<Void>crearInforme(@Body Informe informe);
+    @GET("api/informes")
+    Call<List<Informe>>getTodasLosInformes();
 
 
 

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MaquinaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btVerMaquinasProyecto"
+            android:layout_width="550dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/gradient_bt"
+            android:text="Ver Maquina DE ESTE  PROYECTO"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:layout_below="@+id/btVerMaquinasProyecto"
+            android:id="@+id/btVerTodosMaquinas"
+            android:layout_width="550dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/gradient_bt"
+            android:textSize="20sp"
+            android:text="Ver Todos Las Máquinas"
+            android:textColor="@color/colorWhite" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btVerTodosMaquinas"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTRO MÁQUINAS"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:textStyle="bold"/>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Fecha_inicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etFecha"
+                        android:layout_below="@+id/Fecha_inicio"
+                        android:layout_width="match_parent"
+                        android:inputType="date"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingrese Fecha de inicio (dd/mm/yyyy)" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etMaquina"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Ingrese Nombre del la Máquina" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etTipo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Tipo de Máquina" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etPlaca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Ingrese Placa" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etLecturaHorometro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="Ingrese Lectura de Horometro" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etMotor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="Ingrese Serie de Motor" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/etObservacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="3"
+                        android:hint="Ingrese Observacion" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btCrearMaquina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/gradient_bt"
+                    android:text="CREAR MÁQUINA"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

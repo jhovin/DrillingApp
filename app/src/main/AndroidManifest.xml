@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.ListaProyectosActivity"></activity>
+        <activity android:name=".activities.ListaInformesActivity"></activity>
+        <activity android:name=".activities.InformeActivity" />
+        <activity android:name=".activities.ListaMaquinasActivity" />
+        <activity android:name=".activities.MaquinaActivity" />
+        <activity android:name=".activities.ListaProyectosActivity" />
         <activity android:name=".activities.ProyectoActivity" />
         <activity android:name=".activities.PerfilActivity" />
         <activity android:name=".activities.LoginActivity" />

@@ -28,9 +28,9 @@ public class PerfilActivity extends AppCompatActivity {
     private EditText etDni;
     private EditText etCargo;
     private ImageView ivUsuario;
-    private TextView tvDelete;
-    private TextView tvLogOut;
-    private TextView tvProyectos;
+    private Button tvDelete;
+    private Button tvLogOut;
+    private Button tvProyectos;
     private TextView tvDato;
     private Button btUpdate;
     private Usuario usuario;

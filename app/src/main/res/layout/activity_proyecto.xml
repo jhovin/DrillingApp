@@ -42,7 +42,7 @@ tools:context=".activities.ProyectoActivity">
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/btVerTodosProyectos"
         android:padding="12dp"
         app:cardCornerRadius="24dp"
@@ -69,72 +69,103 @@ tools:context=".activities.ProyectoActivity">
                 android:layout_height="wrap_content"
                 android:text="NOMBRE DE PROYECTO" />
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/etProyecto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email"
+                android:inputType="text"
+                android:textSize="18sp"
                 android:hint="Ingrese Proyecto" />
+            </android.support.design.widget.TextInputLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FECHA INICIO" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etFecha_inicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:drawableRight="@drawable/ic_email"
                 android:hint="dd/mm/yyyy" />
+
+            </android.support.design.widget.TextInputLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FECHA FIN"/>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/etFecha_fin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email"
                 android:inputType="date"
                 android:hint="dd/mm/yyyy" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DISTRITO" />
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/etDistrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email"
+                android:textSize="18sp"
+                android:inputType="text"
                 android:hint="Ingrese Distrito" />
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PROVINCIA" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etProvincia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email"
+                android:inputType="text"
+                android:textSize="18sp"
                 android:hint="Ingrese Provincia" />
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DEPARTAMENTO" />
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/etDepartamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email"
+                android:inputType="text"
+                android:textSize="18sp"
                 android:hint="Ingrese Departamento" />
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/btCrearProyecto"

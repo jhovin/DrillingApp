@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">DrillingApp</string>
+    <string-array name="maquinas_array">
+        <item>Superficie</item>
+        <item>Interior Mina</item>
+    </string-array>
 
     <string name="sign_up">Registrar</string>
     <string name="sign_in">Login</string>
@@ -20,7 +24,7 @@
     <string name="password_error">error_password</string>
     <string name="password_error_less_than">Password debe ser mayor de 6 caracteres</string>
 
-    <string name="update_profile">Actualizar Profile</string>
+    <string name="update_profile">Actualizar Usuario</string>
     <string name="logout">Cerrar Sesión</string>
     <string name="delete">Eliminar Usuario</string>
     <string name="profile">Profile</string>

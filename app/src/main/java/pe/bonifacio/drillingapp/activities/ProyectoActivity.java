@@ -79,12 +79,33 @@ public class ProyectoActivity extends AppCompatActivity {
     //Crear Proyecto
     public void crearProyecto(){
         Proyecto proyecto=new Proyecto();
+
         proyecto.setNombre(etProyecto.getText().toString().toUpperCase().trim());
+        if(etProyecto.getText().toString().isEmpty()){
+            etProyecto.setError("Ingrese el nombre del proyecto");
+            etProyecto.requestFocus();
+            return;
+        }
         proyecto.setFecha_inicio(etFechaInicio.getText().toString().trim());
         proyecto.setFecha_fin(etFechaFin.getText().toString().trim());
         proyecto.setDistrito(etDistrito.getText().toString().trim().toUpperCase());
+        if(etDistrito.getText().toString().isEmpty()){
+            etDistrito.setError("Ingrese distrito");
+            etDistrito.requestFocus();
+            return;
+        }
         proyecto.setProvincia(etProvincia.getText().toString().trim().toUpperCase());
+        if(etProvincia.getText().toString().isEmpty()){
+            etProvincia.setError("Ingrese provincia");
+            etProvincia.requestFocus();
+            return;
+        }
         proyecto.setDepartamento(etDepartamento.getText().toString().trim().toUpperCase());
+        if(etDepartamento.getText().toString().isEmpty()){
+            etDepartamento.setError("Ingrese departamento");
+            etDepartamento.requestFocus();
+            return;
+        }
         proyecto.setProusuario(usuario.getId());
         Call<Void> call = WebService
                 .getInstance()

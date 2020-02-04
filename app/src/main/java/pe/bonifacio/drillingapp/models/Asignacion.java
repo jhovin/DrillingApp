@@ -5,7 +5,7 @@ public class Asignacion {
     private Long id;
     private Long proyecto_id;
     private Long maquina_id;
-    private String fehca_asignacion;
+    private String fecha_asignacion;
 
 
     public Long getId() {
@@ -32,11 +32,11 @@ public class Asignacion {
         this.maquina_id = maquina_id;
     }
 
-    public String getFehca_asignacion() {
-        return fehca_asignacion;
+    public String getFecha_asignacion() {
+        return fecha_asignacion;
     }
 
-    public void setFehca_asignacion(String fehca_asignacion) {
-        this.fehca_asignacion = fehca_asignacion;
+    public void setFecha_asignacion(String fecha_asignacion) {
+        this.fecha_asignacion = fecha_asignacion;
     }
 }

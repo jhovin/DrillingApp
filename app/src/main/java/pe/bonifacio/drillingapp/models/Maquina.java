@@ -74,4 +74,5 @@ public class Maquina {
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
+
 }

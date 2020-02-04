@@ -167,6 +167,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onStart();
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
             Log.d("TAG1","Usuario se inicio correctamente");
+            Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
 
         }

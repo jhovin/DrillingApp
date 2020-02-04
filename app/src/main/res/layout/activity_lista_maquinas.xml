@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ListaProyectosActivity">
+    tools:context=".activities.ListaMaquinasActivity">
+
     <TextView
-        android:id="@+id/titulo_proyectos"
+        android:id="@+id/titulo_maquinas"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="PROYECTOS"
+        android:text="MÁQUINAS"
         android:textSize="20sp"
         android:gravity="center"
         android:textStyle="bold"
@@ -19,8 +20,8 @@
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_below="@+id/titulo_proyectos"
         android:background="@color/colorBlanco"
+        android:layout_below="@+id/titulo_maquinas"
         android:id="@+id/recyclerview"/>
 
 </RelativeLayout>

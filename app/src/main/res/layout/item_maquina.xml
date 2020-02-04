@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:focusable="true"
     android:clickable="true"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginTop="5dp"
     android:backgroundTint="@color/colorBlanco"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardUseCompatPadding="true">
@@ -25,35 +24,15 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/foto_image"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_tres_edificios"
-            />
 
         <TextView
-            android:id="@+id/nombre_text"
+            android:id="@+id/nombre_maquina_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/foto_image"
-            android:layout_marginBottom="8dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Nombre del proyecto"/>
-
-        <TextView
-            android:id="@+id/distrito_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/foto_image"
-            android:layout_below="@+id/nombre_text"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            tools:text="distrito"/>
+            tools:text="Nombre de las Máquinas"/>
 
     </RelativeLayout>
 

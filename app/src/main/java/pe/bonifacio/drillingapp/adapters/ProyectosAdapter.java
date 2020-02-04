@@ -1,6 +1,7 @@
 package pe.bonifacio.drillingapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
+import pe.bonifacio.drillingapp.activities.MaquinaActivity;
 import pe.bonifacio.drillingapp.models.Proyecto;
 
 public class ProyectosAdapter extends RecyclerView.Adapter<ProyectosAdapter.ViewHolder>{
@@ -66,6 +68,9 @@ class ViewHolder extends RecyclerView.ViewHolder{
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, MaquinaActivity.class);
+                intent.putExtra("id", pro.getProid());
+                context.startActivity(intent);
 
             }
         });
