@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
+import pe.bonifacio.drillingapp.activities.DetailActivity;
 import pe.bonifacio.drillingapp.models.Informe;
 
 
@@ -67,7 +68,9 @@ public class InformesAdapter extends RecyclerView.Adapter<InformesAdapter.ViewHo
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(viewHolder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("ID" , info.getInfoid());
+                viewHolder.itemView.getContext().startActivity(intent);
 
 
             }
