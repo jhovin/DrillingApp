@@ -21,6 +21,7 @@ tools:context=".activities.ProyectoActivity">
         android:background="@drawable/gradient_bt"
         android:text="Ver Proyectos de Este Usuario"
         android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorWhite" />
 
@@ -32,6 +33,7 @@ tools:context=".activities.ProyectoActivity">
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_marginBottom="40dp"
         android:background="@drawable/gradient_bt"
         android:text="Ver Todos Los Proyectos"
@@ -77,7 +79,10 @@ tools:context=".activities.ProyectoActivity">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris"
+                >
+
             <EditText
                 android:id="@+id/etProyecto"
                 android:layout_width="match_parent"
@@ -94,7 +99,8 @@ tools:context=".activities.ProyectoActivity">
                 android:text="FECHA INICIO" />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris">
 
             <EditText
                 android:id="@+id/etFecha_inicio"
@@ -113,7 +119,8 @@ tools:context=".activities.ProyectoActivity">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris">
 
             <EditText
                 android:id="@+id/etFecha_fin"
@@ -133,7 +140,8 @@ tools:context=".activities.ProyectoActivity">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris">
 
             <EditText
                 android:id="@+id/etDistrito"
@@ -141,7 +149,8 @@ tools:context=".activities.ProyectoActivity">
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:inputType="text"
-                android:hint="Ingrese Distrito" />
+                android:hint="Ingrese Distrito"
+                />
             </android.support.design.widget.TextInputLayout>
 
             <TextView
@@ -152,7 +161,8 @@ tools:context=".activities.ProyectoActivity">
                 android:text="PROVINCIA" />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris">
 
             <EditText
                 android:id="@+id/etProvincia"
@@ -172,7 +182,8 @@ tools:context=".activities.ProyectoActivity">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorGris">
 
             <EditText
                 android:id="@+id/etDepartamento"
@@ -190,7 +201,8 @@ tools:context=".activities.ProyectoActivity">
                 android:layout_marginTop="24dp"
                 android:background="@drawable/gradient_bt"
                 android:text="Crear Proyecto"
-                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textSize="23sp"
                 android:textColor="@color/colorWhite" />
 
         </LinearLayout>

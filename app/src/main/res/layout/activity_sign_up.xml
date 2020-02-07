@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
             android:padding="20dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp">
@@ -37,6 +37,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/colorBlack"
+                    android:src="@drawable/ic_registro"
                     />
                 <TextView
                     android:id="@+id/textView"
@@ -48,18 +49,19 @@
                     android:text="REGISTRARSE"
                     android:textStyle="bold"
                     android:textColor="@color/colorBlack"
-                    android:textSize="30sp"/>
+                    android:textSize="32sp"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
                     <EditText
                         android:id="@+id/etName"
                         android:drawableStart="@drawable/ic_person"
                         android:padding="12dp"
                         android:inputType="text"
                         android:hint="Ingrese Nombres"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </android.support.design.widget.TextInputLayout>
@@ -67,13 +69,14 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etEmail"
                         android:drawableStart="@drawable/ic_email"
                         android:padding="12dp"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:inputType="textEmailAddress"
                         android:hint="usuario@mantenimientoredrilsa.com"
                         android:layout_width="match_parent"
@@ -82,13 +85,14 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                 <EditText
                     android:id="@+id/etDni"
-                    android:drawableStart="@drawable/ic_dni_de_periodista"
+                    android:drawableStart="@drawable/ic_carnet"
                     android:hint="Ingrese DNI"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:padding="12dp"
                     android:inputType="number"
                     android:maxLength="12"
@@ -98,13 +102,14 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                 <EditText
                     android:id="@+id/etCargo"
                     android:drawableStart="@drawable/ic_cargo"
                     android:padding="12dp"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:hint="Ingrese Cargo"
                     android:inputType="text"
                     android:layout_width="match_parent"
@@ -115,15 +120,16 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     app:passwordToggleEnabled="true"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                 <EditText
                     android:id="@+id/etPassword"
                     android:drawableStart="@drawable/ic_lock"
-                    android:hint="Ingrese Password"
+                    android:hint="Ingrese Contraseña"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 </android.support.design.widget.TextInputLayout>
@@ -133,7 +139,9 @@
                     android:layout_marginTop="24dp"
                     android:background="@drawable/gradient_bt"
                     android:text="@string/sign_up"
-                    android:textSize="20sp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"
                     android:textColor="@color/colorBlanco"
                     android:backgroundTint="#FB8C00"
                     android:layout_width="match_parent"

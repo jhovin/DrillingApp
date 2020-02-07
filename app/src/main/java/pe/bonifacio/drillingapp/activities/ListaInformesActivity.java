@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.Collection;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -23,7 +24,6 @@ public class ListaInformesActivity extends AppCompatActivity {
 
     private static final String TAG=ListaInformesActivity.class.getSimpleName();
     private RecyclerView informesList;
-
 
 
     @Override
@@ -51,7 +51,6 @@ public class ListaInformesActivity extends AppCompatActivity {
 
                         List<Informe> informes = response.body();
                         Log.d(TAG, "informes: " + informes);
-
                         InformesAdapter adapter = (InformesAdapter) informesList.getAdapter();
                         adapter.setInformes(informes);
                         adapter.notifyDataSetChanged();

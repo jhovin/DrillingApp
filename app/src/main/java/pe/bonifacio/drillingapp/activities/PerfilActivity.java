@@ -31,7 +31,6 @@ public class PerfilActivity extends AppCompatActivity {
     private Button tvDelete;
     private Button tvLogOut;
     private Button tvProyectos;
-    private TextView tvDato;
     private Button btUpdate;
     private Usuario usuario;
 
@@ -57,7 +56,6 @@ public class PerfilActivity extends AppCompatActivity {
         etDni.setText(usuario.getDni());
         etCargo=findViewById(R.id.etCargo);
         etCargo.setText(usuario.getCargo());
-        tvDato=findViewById(R.id.tvDato);
         btUpdate=findViewById(R.id.btUpdate);
         tvDelete=findViewById(R.id.tvDelete);
         tvLogOut=findViewById(R.id.tvLogOut);

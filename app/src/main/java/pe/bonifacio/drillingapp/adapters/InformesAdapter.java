@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;

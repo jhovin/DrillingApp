@@ -13,7 +13,7 @@
     <string name="dni">DNI</string>
     <string name="cargo">Cargo</string>
     <string name="password">Password</string>
-    <string name="have_an_account"><u>¿Ya tienes una cuenta?</u></string>
+    <string name="have_an_account">¿Ya tienes una cuenta?</string>
     <string name="have_not_an_account">¿No tienes una cuenta? Registrate</string>
 
     <string name="name_error">ingres un nombre</string>

@@ -21,6 +21,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/gradient_bt"
             android:text="Ver Informes diario"
+            android:textStyle="bold"
             android:textColor="@color/colorWhite"
             android:textSize="25sp" />
 
@@ -70,7 +71,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etSistema"
@@ -90,7 +92,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etDescripcion"
@@ -110,7 +113,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etMotivo"
@@ -130,7 +134,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etOt"
@@ -150,7 +155,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etLecHorometro"
@@ -170,7 +176,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etEvento"
@@ -189,7 +196,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etFecha_informe"
@@ -208,7 +216,8 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorGris">
 
                     <EditText
                         android:id="@+id/etObservacion"
@@ -228,6 +237,7 @@
                     android:background="@drawable/gradient_bt"
                     android:text="@string/sign_up"
                     android:textSize="25sp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorWhite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
