@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient_bt_lenguajes"
     tools:context=".activities.SignUpActivity">
 
 
@@ -12,33 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
 
-            android:src="@drawable/ic_chrome_reader"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_centerHorizontal="true"
-            android:text="@string/sign_up"
-            android:textColor="@color/colorWhite"
-            android:textSize="24dp"/>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="100dp"
             android:padding="20dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp">
@@ -48,6 +30,25 @@
                 android:padding="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/colorBlack"
+                    />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:text="REGISTRARSE"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="30sp"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -74,7 +75,7 @@
                         android:padding="12dp"
                         android:textSize="20sp"
                         android:inputType="textEmailAddress"
-                        android:hint="nombre.apellido@mantenimientoredrilsa.com"
+                        android:hint="usuario@mantenimientoredrilsa.com"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </android.support.design.widget.TextInputLayout>
@@ -101,7 +102,7 @@
 
                 <EditText
                     android:id="@+id/etCargo"
-                    android:drawableStart="@drawable/ic_documento"
+                    android:drawableStart="@drawable/ic_cargo"
                     android:padding="12dp"
                     android:textSize="20sp"
                     android:hint="Ingrese Cargo"
@@ -133,7 +134,8 @@
                     android:background="@drawable/gradient_bt"
                     android:text="@string/sign_up"
                     android:textSize="20sp"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorBlanco"
+                    android:backgroundTint="#FB8C00"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -150,7 +152,8 @@
             android:layout_marginBottom="20dp"
             android:textSize="30sp"
             android:text="@string/have_an_account"
-            android:textColor="@color/colorPlata"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorBlanco"/>
 
     </RelativeLayout>
 

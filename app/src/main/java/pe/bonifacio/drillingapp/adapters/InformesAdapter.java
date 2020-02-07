@@ -32,10 +32,14 @@ public class InformesAdapter extends RecyclerView.Adapter<InformesAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder{
         TextView nombreText;
+        TextView fechaText;
+        TextView observacionText;
 
         ViewHolder(View itemView) {
             super(itemView);
             nombreText = itemView.findViewById(R.id.sistema_text);
+            fechaText=itemView.findViewById(R.id.fecha_text);
+            observacionText=itemView.findViewById(R.id.observacion_text);
 
         }
     }
@@ -49,18 +53,21 @@ public class InformesAdapter extends RecyclerView.Adapter<InformesAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int position) {
         final Context context = viewHolder.itemView.getContext();
 
         final Informe informe = this.informes.get(position);
 
         viewHolder.nombreText.setText(informe.getSistema());
-
+        viewHolder.fechaText.setText(informe.getFecha());
+        viewHolder.observacionText.setText(informe.getObservacion());
 
         final Informe info= this.informes.get(position);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
             }
         });

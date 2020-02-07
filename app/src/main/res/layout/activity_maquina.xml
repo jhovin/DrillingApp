@@ -9,14 +9,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
         <Button
             android:id="@+id/btVerMaquinasProyecto"
             android:layout_width="550dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/gradient_bt"
             android:text="Ver Maquina DE ESTE  PROYECTO"
@@ -30,7 +31,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/gradient_bt"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:text="Ver Todos Las Máquinas"
             android:textColor="@color/colorWhite" />
 
@@ -41,7 +42,7 @@
             android:layout_below="@+id/btVerTodosMaquinas"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp">
 
@@ -54,11 +55,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="REGISTRO MÁQUINAS"
+                    android:textColor="@color/colorBlack"
                     android:textSize="25sp"
                     android:gravity="center"
                     android:layout_marginBottom="12dp"
                     android:textStyle="bold"/>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="FECHA DE INICIO" />
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/Fecha_inicio"
@@ -71,8 +78,15 @@
                         android:layout_width="match_parent"
                         android:inputType="date"
                         android:layout_height="wrap_content"
-                        android:hint="Ingrese Fecha de inicio (dd/mm/yyyy)" />
+                        android:hint="dd/mm/yyyy" />
                 </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="NOMBRE DE LA MÁQUINA" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -87,6 +101,13 @@
 
                 </android.support.design.widget.TextInputLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TIPO DE MÁQUINA"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,9 +117,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:hint="Tipo de Máquina" />
+                        android:hint="Interior Mina / Superficie" />
 
                 </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="PLACA" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -113,6 +140,12 @@
                         android:hint="Ingrese Placa" />
 
                 </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="LECTURA DE HOROMETRO" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -125,7 +158,12 @@
                         android:inputType="numberDecimal"
                         android:hint="Ingrese Lectura de Horometro" />
                 </android.support.design.widget.TextInputLayout>
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="SERIE DE MOTOR" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -138,6 +176,12 @@
                         android:hint="Ingrese Serie de Motor" />
                 </android.support.design.widget.TextInputLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:text="OBSERVACIÓN" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -160,7 +204,7 @@
                     android:layout_marginTop="24dp"
                     android:background="@drawable/gradient_bt"
                     android:text="CREAR MÁQUINA"
-                    android:textSize="18sp"
+                    android:textSize="25sp"
                     android:textColor="@color/colorWhite" />
 
             </LinearLayout>

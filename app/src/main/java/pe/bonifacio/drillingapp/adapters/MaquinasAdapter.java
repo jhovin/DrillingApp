@@ -32,11 +32,12 @@ public void setMaquinas(List<Maquina> maquinas){
 
 class ViewHolder extends RecyclerView.ViewHolder{
     TextView nombreText;
+    TextView tipoText;
 
     ViewHolder(View itemView) {
         super(itemView);
         nombreText = itemView.findViewById(R.id.nombre_maquina_text);
-
+        tipoText=itemView.findViewById(R.id.tipo_maquina_text);
     }
 }
 
@@ -55,6 +56,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
         final Maquina maquina = this.maquinas.get(position);
 
         viewHolder.nombreText.setText(maquina.getNombre());
+        viewHolder.tipoText.setText(maquina.getTipo());
 
 
         final Maquina maq = this.maquinas.get(position);

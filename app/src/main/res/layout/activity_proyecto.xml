@@ -20,6 +20,7 @@ tools:context=".activities.ProyectoActivity">
         android:layout_centerHorizontal="true"
         android:background="@drawable/gradient_bt"
         android:text="Ver Proyectos de Este Usuario"
+        android:textSize="22sp"
         android:layout_marginBottom="10dp"
         android:textColor="@color/colorWhite" />
 
@@ -30,6 +31,7 @@ tools:context=".activities.ProyectoActivity">
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:textSize="22sp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/gradient_bt"
         android:text="Ver Todos Los Proyectos"
@@ -43,6 +45,7 @@ tools:context=".activities.ProyectoActivity">
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorBlanco"
         android:layout_below="@+id/btVerTodosProyectos"
         android:padding="12dp"
         app:cardCornerRadius="24dp"
@@ -57,16 +60,19 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
-                android:text="REGISTRO DE PROYECTO" />
+                android:text="REGISTRO DE PROYECTO"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="NOMBRE DE PROYECTO" />
 
             <android.support.design.widget.TextInputLayout
@@ -83,6 +89,8 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="FECHA INICIO" />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -99,6 +107,8 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="FECHA FIN"/>
 
             <android.support.design.widget.TextInputLayout
@@ -117,6 +127,8 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="DISTRITO" />
 
             <android.support.design.widget.TextInputLayout
@@ -135,6 +147,8 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="PROVINCIA" />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -152,6 +166,8 @@ tools:context=".activities.ProyectoActivity">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
                 android:text="DEPARTAMENTO" />
 
             <android.support.design.widget.TextInputLayout
@@ -174,6 +190,7 @@ tools:context=".activities.ProyectoActivity">
                 android:layout_marginTop="24dp"
                 android:background="@drawable/gradient_bt"
                 android:text="Crear Proyecto"
+                android:textSize="22sp"
                 android:textColor="@color/colorWhite" />
 
         </LinearLayout>

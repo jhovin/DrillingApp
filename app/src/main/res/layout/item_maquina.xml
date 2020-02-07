@@ -33,6 +33,16 @@
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Nombre de las Máquinas"/>
+        <TextView
+            android:id="@+id/tipo_maquina_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/foto_image"
+            android:layout_below="@+id/nombre_maquina_text"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Tipo de Máquinas"/>
 
     </RelativeLayout>
 

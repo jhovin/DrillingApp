@@ -33,6 +33,25 @@
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Nombre de Sistema"/>
+        <TextView
+            android:id="@+id/fecha_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/foto_image"
+            android:layout_below="@+id/sistema_text"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="dd/mm/yyyy"/>
+        <TextView
+            android:id="@+id/observacion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/fecha_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Observacion"/>
 
     </RelativeLayout>
 

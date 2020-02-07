@@ -70,6 +70,8 @@ public interface WebServiceApi {
     Call<Void>crearInforme(@Body Informe informe);
     @GET("api/informes")
     Call<List<Informe>>getTodasLosInformes();
+    @GET("/api/informes/{infoid}")
+    Call<Informe>showInforme(@Path("infoid")Long infoid);
 
 
 

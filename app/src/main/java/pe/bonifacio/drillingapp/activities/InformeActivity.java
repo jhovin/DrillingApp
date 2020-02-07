@@ -59,7 +59,7 @@ public class InformeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearInforme();
-                startActivity(new Intent(getApplicationContext(),ListaInformesActivity.class));
+
             }
         });
         btVerInformes=findViewById(R.id.btVerInformes);
@@ -76,12 +76,47 @@ public class InformeActivity extends AppCompatActivity {
     public void crearInforme(){
         Informe info= new Informe();
         info.setSistema(etSistema.getText().toString().trim());
+        if(etSistema.getText().toString().isEmpty()){
+            etSistema.setError("Ingrese el sistema");
+            etSistema.requestFocus();
+            return;
+        }
         info.setDescripcion(etDescripcion.getText().toString().trim());
+        if(etDescripcion.getText().toString().isEmpty()){
+            etDescripcion.setError("Ingrese la descripción");
+            etDescripcion.requestFocus();
+            return;
+        }
         info.setMotivo(etMotivo.getText().toString().trim());
+        if(etMotivo.getText().toString().isEmpty()){
+            etMotivo.setError("Ingrese el motivo");
+            etMotivo.requestFocus();
+            return;
+        }
         info.setOt(etOt.getText().toString().trim());
+        if(etOt.getText().toString().isEmpty()){
+            etOt.setError("Ingrese el número de ot");
+            etOt.requestFocus();
+            return;
+        }
         info.setHorometro((etLecHorometro.getText().toString().trim()));
+        if(etLecHorometro.getText().toString().isEmpty()){
+            etLecHorometro.setError("Ingrese la lectura de horómetro");
+            etLecHorometro.requestFocus();
+            return;
+        }
         info.setEvento(etEvento.getText().toString().trim());
+        if(etEvento.getText().toString().isEmpty()){
+            etEvento.setError("Ingrese el evento");
+            etEvento.requestFocus();
+            return;
+        }
         info.setFecha(etFechaInforme.getText().toString().trim());
+        if(etFechaInforme.getText().toString().isEmpty()){
+            etFechaInforme.setError("Ingrese la fecha");
+            etFechaInforme.requestFocus();
+            return;
+        }
         info.setObservacion(etObservacion.getText().toString().trim());
 
         Call<Void> call= WebService
@@ -94,6 +129,8 @@ public class InformeActivity extends AppCompatActivity {
                 if (response.code() == 201) {
                     Log.d("TAG1", "Informe creado correctamente");
                     Toast.makeText(InformeActivity.this, "Informe creado correctamente", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),ListaInformesActivity.class));
+                    finish();
                 }
 
             }
