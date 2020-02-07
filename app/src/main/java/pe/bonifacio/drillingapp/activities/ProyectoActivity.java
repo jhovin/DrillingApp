@@ -29,7 +29,6 @@ public class ProyectoActivity extends AppCompatActivity {
     private EditText etProvincia;
     private EditText etDepartamento;
 
-
     private Button btCrearProyecto;
     private Button btVerTodosProyecto;
     private Button btVerProyectosUsuario;
@@ -87,7 +86,17 @@ public class ProyectoActivity extends AppCompatActivity {
             return;
         }
         proyecto.setFecha_inicio(etFechaInicio.getText().toString().trim());
+        if(etFechaInicio.getText().toString().isEmpty()){
+            etFechaInicio.setError("Ingrese una fecha de inicio");
+            etFechaInicio.requestFocus();
+            return;
+        }
         proyecto.setFecha_fin(etFechaFin.getText().toString().trim());
+        if(etFechaFin.getText().toString().isEmpty()){
+            etFechaFin.setError("Ingrese una fecha de fin");
+            etFechaFin.requestFocus();
+            return;
+        }
         proyecto.setDistrito(etDistrito.getText().toString().trim().toUpperCase());
         if(etDistrito.getText().toString().isEmpty()){
             etDistrito.setError("Ingrese distrito");
@@ -117,6 +126,8 @@ public class ProyectoActivity extends AppCompatActivity {
                 if(response.code()==201){
                     Log.d("TAG1", "Proyecto creado correctamente");
                     startActivity(new Intent(getApplicationContext(),ListaProyectosActivity.class));
+                    finish();
+
                 }
             }
 

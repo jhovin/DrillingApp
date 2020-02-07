@@ -1,6 +1,7 @@
 package pe.bonifacio.drillingapp.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -125,5 +126,10 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Usuario inválido: "+t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void irIntranet(View view) {
+        Uri uri = Uri.parse("http://intranet.redrilsa.com.pe/inicio.asp");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }

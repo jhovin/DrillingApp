@@ -14,9 +14,9 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="220dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/ic_login1"
             />
 
@@ -127,10 +127,18 @@
             android:layout_below="@+id/cardView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:textSize="24sp"
             android:text="@string/have_not_an_account"
             android:textColor="@color/colorBlanco"/>
+        <ImageView
+            android:id="@+id/iV_intranet"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvSignUp"
+            android:src="@drawable/ic_intranet"
+            android:onClick="irIntranet"
+            />
 
     </RelativeLayout>
 
