@@ -48,10 +48,10 @@ public class DetailActivity extends AppCompatActivity {
         infoid = getIntent().getExtras().getLong("ID");
         Log.e(TAG, "id:" + infoid);
 
-        initialize();
+        informe();
     }
-
-    private void initialize() {
+    //Ver Detalles de Informe
+    private void informe() {
 
         WebServiceApi service = ApiServiceGenerator.createService(WebServiceApi.class);
 

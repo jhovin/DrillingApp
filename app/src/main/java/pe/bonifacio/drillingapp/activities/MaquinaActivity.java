@@ -144,6 +144,8 @@ public class MaquinaActivity extends AppCompatActivity {
             }
         });
     }
+
+    //Ver todas las Máquinas
     public void todasMaquinas(){
     Call<List<Maquina>> call = WebService
             .getInstance()

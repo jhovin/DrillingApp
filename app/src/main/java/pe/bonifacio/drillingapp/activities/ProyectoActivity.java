@@ -29,7 +29,6 @@ public class ProyectoActivity extends AppCompatActivity {
     private EditText etDistrito;
     private EditText etProvincia;
     private EditText etDepartamento;
-
     private Button btCrearProyecto;
     private Button btVerTodosProyecto;
     private Button btVerProyectosUsuario;
@@ -76,7 +75,7 @@ public class ProyectoActivity extends AppCompatActivity {
         });
 
     }
-    //Crear Proyecto
+    //Crear Proyectos
     public void crearProyecto(){
         Proyecto proyecto=new Proyecto();
 
@@ -138,7 +137,7 @@ public class ProyectoActivity extends AppCompatActivity {
             }
         });
     }
-    //Ver Todos los Proyectos
+    //Ver todos los Proyectos
     public void verTodosLosProyectos(){
 
         Call<List<Proyecto>> call = WebService
@@ -169,7 +168,7 @@ public class ProyectoActivity extends AppCompatActivity {
 
     }
 
-    //Ver Proyecto por Usuarios
+    //Ver proyectos por Usuario
     public void verProyectosPorUsuario(){
         Call<List<Proyecto>> call = WebService
                 .getInstance()

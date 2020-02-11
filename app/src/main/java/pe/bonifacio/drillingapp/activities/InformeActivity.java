@@ -143,6 +143,7 @@ public class InformeActivity extends AppCompatActivity {
 
 
     }
+    //Ver los Informes
     public void verInformes(){
         Call<List<Informe>> call = WebService
                 .getInstance()

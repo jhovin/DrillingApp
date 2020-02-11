@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Ingresar e Validar Login
     private void userLogin() {
 
         String email = etEmail.getText().toString().trim();
@@ -96,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         login();
 
     }
+    //Ingresar Usuario Logueado
     public void  login(){
         Call<List<Usuario>>call=WebService
                 .getInstance()
@@ -127,6 +128,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    //Redirect el intranet
     public void irIntranet(View view) {
         Uri uri = Uri.parse("http://intranet.redrilsa.com.pe/inicio.asp");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);

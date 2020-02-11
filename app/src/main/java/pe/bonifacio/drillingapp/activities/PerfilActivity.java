@@ -182,7 +182,7 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
     }
-    //Delete USUARIO
+    //Eliminar USUARIO
     public void deleteById(){
         Call<Void>call=WebService
                 .getInstance()
