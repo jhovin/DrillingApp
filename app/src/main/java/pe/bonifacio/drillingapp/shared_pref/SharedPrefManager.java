@@ -55,8 +55,6 @@ public class SharedPrefManager {
                 sharedPreferences.getString(SHARED_PREFERENCES_DNI,null),
                 sharedPreferences.getString(SHARED_PREFERENCES_CARGO,null),
                 sharedPreferences.getString(SHARED_PREFERENCES_EMAIL,null)
-
-
         );
         return usuario;
     }

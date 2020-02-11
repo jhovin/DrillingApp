@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/group_nav_system"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_proyectos"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Todos los proyectos" />
+        <item
+            android:id="@+id/nav_maquinas"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Todas las Maquinas" />
+    </group>
+    <group
+        android:id="@+id/group_nav_system2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="Cerrar Sesión" />
+    </group>
+</menu>

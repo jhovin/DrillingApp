@@ -26,6 +26,8 @@ import retrofit2.Response;
 
 public class MaquinaActivity extends AppCompatActivity {
 
+    private static String TAG = DetailActivity.class.getSimpleName();
+
     private EditText etFecha;
     private EditText etMaquina;
     private EditText etTipo;
@@ -132,7 +134,6 @@ public class MaquinaActivity extends AppCompatActivity {
                     Toast.makeText(MaquinaActivity.this, "Máquina creada correctamente", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),ListaMaquinasActivity.class));
                     finish();
-
                 }
 
             }
@@ -158,6 +159,7 @@ public class MaquinaActivity extends AppCompatActivity {
                 }
             }else if(response.code()==404){
                 Log.d("TAG1", "No hay maquinas");
+                Toast.makeText(MaquinaActivity.this, "No hay máquinas", Toast.LENGTH_SHORT).show();
             }
         }
 

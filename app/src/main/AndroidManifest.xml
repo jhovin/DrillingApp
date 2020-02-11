@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.DetailActivity"></activity>
+        <activity android:name=".activities.DetailActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
         <activity android:name=".activities.ProyectoActivity" />
         <activity android:name=".activities.PerfilActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.SignUpActivity"></activity>
+        <activity android:name=".activities.SignUpActivity" />
     </application>
 
 </manifest>
