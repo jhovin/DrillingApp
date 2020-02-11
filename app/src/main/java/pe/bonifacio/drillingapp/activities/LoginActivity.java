@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.code() == 200){
                     Log.d("TAG1", "Usuario logeado "+"id"+response.body().get(0).getId()
                             +"email: "+response.body().get(0).getEmail());
-                    Toast.makeText(LoginActivity.this, "BIENVENIDO A REDRILSAPP", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "BIENVENIDOS", Toast.LENGTH_SHORT).show();
                     SharedPrefManager.getInstance(getApplicationContext())
                             .saveUsuario(response.body().get(0));
                     startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
