@@ -161,7 +161,6 @@ public class InformeActivity extends AppCompatActivity {
                     Toast.makeText(InformeActivity.this, "No hay informes", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<List<Informe>> call, Throwable t) {
 

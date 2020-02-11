@@ -66,13 +66,14 @@
 
                     <TextView
                         android:id="@+id/sistema_des"
-                        android:padding="12dp"
-                        android:inputType="text"
-                        android:hint="Ingrese Sistema"
-                        android:gravity="center"
-                        android:textSize="22sp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Ingrese Sistema"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        android:textColor="@color/colorGris"
+                        android:textSize="22sp" />
                 </android.support.design.widget.TextInputLayout>
 
                 <TextView
@@ -92,7 +93,8 @@
                         android:id="@+id/descripcion_des"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Ingrese Descripción"
+                        android:text="Ingrese Descripción"
+                        android:textColor="@color/colorGris"
                         android:gravity="center"
                         android:inputType="textEmailAddress"
                         android:padding="12dp"
@@ -116,7 +118,8 @@
                         android:id="@+id/motivo_des"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Ingrese Motivo"
+                        android:text="Ingrese Motivo"
+                        android:textColor="@color/colorGris"
                         android:gravity="center"
                         android:inputType="text"
                         android:padding="12dp"
@@ -140,8 +143,9 @@
                         android:id="@+id/ot_des"
                         android:padding="12dp"
                         android:textSize="22sp"
-                        android:hint="Ingrese N°de OT"
+                        android:text="Ingrese N°de OT"
                         android:inputType="text"
+                        android:textColor="@color/colorGris"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -162,9 +166,10 @@
 
                     <TextView
                         android:id="@+id/horometro_des"
-                        android:hint="Ingrese Horometro"
+                        android:text="Ingrese Horometro"
                         android:inputType="numberDecimal"
                         android:gravity="center"
+                        android:textColor="@color/colorGris"
                         android:padding="12dp"
                         android:textSize="22sp"
                         android:layout_width="match_parent"
@@ -186,7 +191,8 @@
 
                     <TextView
                         android:id="@+id/evento_des"
-                        android:hint="Ingrese Evento"
+                        android:text="Ingrese Evento"
+                        android:textColor="@color/colorGris"
                         android:inputType="text"
                         android:padding="12dp"
                         android:textSize="22sp"
@@ -209,7 +215,8 @@
 
                     <TextView
                         android:id="@+id/fecha_des"
-                        android:hint="Ingrese Fecha"
+                        android:text="Ingrese Fecha"
+                        android:textColor="@color/colorGris"
                         android:inputType="date"
                         android:padding="12dp"
                         android:textSize="22sp"
@@ -232,7 +239,8 @@
 
                     <TextView
                         android:id="@+id/observacion_des"
-                        android:hint="Ingrese Observacion"
+                        android:text="Ingrese Observacion"
+                        android:textColor="@color/colorGris"
                         android:inputType="text"
                         android:padding="12dp"
                         android:textSize="22sp"
@@ -248,6 +256,4 @@
 
 
     </RelativeLayout>
-
-
 </ScrollView>

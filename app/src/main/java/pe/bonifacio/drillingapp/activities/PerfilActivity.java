@@ -170,6 +170,7 @@ public class PerfilActivity extends AppCompatActivity {
 
                 }else if(response.code()==400){
                     Log.d("TAG1", "Usuario no existe");
+                    Toast.makeText(PerfilActivity.this, "Usuario no existe", Toast.LENGTH_SHORT).show();
                 }else{
                     Log.d("TAG1", "Error indeterminado");
                 }
@@ -192,6 +193,7 @@ public class PerfilActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() == 200){
                     Log.d("TAG1", "Usuario eliminado correctamente");
+                    Toast.makeText(PerfilActivity.this, "Usuario eliminado correctamente", Toast.LENGTH_SHORT).show();
                     logout();
                 }else{
                     Log.d("TAG1", "Error no definido");

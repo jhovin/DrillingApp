@@ -56,6 +56,7 @@ public class InformesAdapter extends RecyclerView.Adapter<InformesAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int position) {
+
         final Context context = viewHolder.itemView.getContext();
 
         final Informe informe = this.informes.get(position);

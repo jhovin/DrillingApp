@@ -22,6 +22,7 @@ public interface WebServiceApi {
     /*
        USUARIOS
         */
+
     @POST("/api/usuarios")
     Call<Void> registrarUsuario(@Body Usuario usuario);
 
@@ -55,12 +56,13 @@ public interface WebServiceApi {
     /*
       Maquinas
     */
-    
+
     @POST("api/maquinas")
     Call<Void>crearMaquina(@Body Maquina Maquina);
 
     @GET("api/maquinas")
     Call<List<Maquina>>getTodasLasMaquinas();
+
 
        /*
       Informes

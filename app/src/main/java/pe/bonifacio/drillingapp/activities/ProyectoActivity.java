@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -155,6 +156,7 @@ public class ProyectoActivity extends AppCompatActivity {
                     }
                 }else if(response.code()==404){
                     Log.d("TAG1", "No hay proyectos");
+                    Toast.makeText(ProyectoActivity.this, "No hay proyectos", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -183,6 +185,7 @@ public class ProyectoActivity extends AppCompatActivity {
                     }
                 }else if(response.code()==404){
                     Log.d("TAG1", "No hay proyectos");
+                    Toast.makeText(ProyectoActivity.this, "No hay proyectos", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
