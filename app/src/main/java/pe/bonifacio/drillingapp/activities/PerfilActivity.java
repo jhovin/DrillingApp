@@ -27,6 +27,7 @@ public class PerfilActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etDni;
     private EditText etCargo;
+    private EditText etPassword;
     private ImageView ivUsuario;
     private Button tvDelete;
     private Button tvLogOut;
@@ -56,6 +57,9 @@ public class PerfilActivity extends AppCompatActivity {
         etDni.setText(usuario.getDni());
         etCargo=findViewById(R.id.etCargo);
         etCargo.setText(usuario.getCargo());
+        etPassword=findViewById(R.id.etPassword);
+        etPassword.setText(usuario.getPassword());
+
         btUpdate=findViewById(R.id.btUpdate);
         tvDelete=findViewById(R.id.tvDelete);
         tvLogOut=findViewById(R.id.tvLogOut);
@@ -115,7 +119,7 @@ public class PerfilActivity extends AppCompatActivity {
         String name = etName.getText().toString().trim();
         String dni=etDni.getText().toString().trim().toUpperCase();
         String cargo=etCargo.getText().toString().trim().toUpperCase();
-
+        String password=etPassword.getText().toString().trim();
 
         if(name.isEmpty()){
             etName.setError(getResources().getString(R.string.name_error));
@@ -149,10 +153,21 @@ public class PerfilActivity extends AppCompatActivity {
             etCargo.requestFocus();
             return;
         }
+        if (password.isEmpty()) {
+            etPassword.setError("Ingrese correctamente");
+            etPassword.requestFocus();
+            return;
+        }
+        if (password.isEmpty()){
+            etPassword.setError(getResources().getString(R.string.password_error_less_than));
+            etPassword.requestFocus();
+            return;
+        }
         usuario.setNombre(name);
         usuario.setEmail(email);
         usuario.setCargo(cargo);
         usuario.setDni(dni);
+        usuario.setPassword(password);
 
         Call<Usuario> call = WebService
                 .getInstance()

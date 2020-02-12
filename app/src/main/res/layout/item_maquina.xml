@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/foto_image"
+            android:layout_toStartOf="@+id/menu_button"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Nombre de las Máquinas"/>
@@ -43,6 +44,17 @@
             android:textSize="15sp"
             android:textStyle="bold"
             tools:text="Tipo de Máquinas"/>
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/ic_menu_dots"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:background="@null"/>
+
 
     </RelativeLayout>
 

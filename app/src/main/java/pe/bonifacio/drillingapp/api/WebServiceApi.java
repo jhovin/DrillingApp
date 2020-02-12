@@ -2,6 +2,7 @@ package pe.bonifacio.drillingapp.api;
 
 import java.util.List;
 
+import pe.bonifacio.drillingapp.models.ApiMessage;
 import pe.bonifacio.drillingapp.models.Informe;
 import pe.bonifacio.drillingapp.models.Maquina;
 import pe.bonifacio.drillingapp.models.Proyecto;
@@ -51,6 +52,9 @@ public interface WebServiceApi {
     @POST("api/proyectos_usuario")
     Call<List<Proyecto>> getProyectosUsuarios(@Body Usuario usuario);
 
+    @DELETE("api/proyectos/{proid}")
+    Call<ApiMessage>destroyProyecto(@Path("proid")Long proid);
+
 
 
     /*
@@ -62,6 +66,10 @@ public interface WebServiceApi {
 
     @GET("api/maquinas")
     Call<List<Maquina>>getTodasLasMaquinas();
+
+    @DELETE("api/maquinas/{id}")
+    Call<ApiMessage>destroyMaquina(@Path("id")Long id);
+
 
 
        /*
