@@ -1,14 +1,18 @@
 package pe.bonifacio.drillingapp.activities;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -25,6 +29,11 @@ public class ProyectoActivity extends AppCompatActivity {
 
     private EditText etProyecto;
     private EditText etFechaInicio;
+    private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
+    static final int DATE_ID = 0;
+    Calendar C = Calendar.getInstance();
+
+
     private EditText etFechaFin;
     private EditText etDistrito;
     private EditText etProvincia;
@@ -38,6 +47,32 @@ public class ProyectoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proyecto);
+
+        sMonthIni = C.get(Calendar.MONTH);
+        sDayIni = C.get(Calendar.DAY_OF_MONTH);
+        sYearIni = C.get(Calendar.YEAR);
+
+        etFechaInicio=findViewById(R.id.etFecha_inicio);
+        int textLength = etFechaInicio.getText().length();
+        etFechaInicio.setSelection(textLength,textLength);
+
+        etFechaFin=findViewById(R.id.etFecha_fin);
+        int editLength=etFechaFin.getText().length();
+        etFechaFin.setSelection(editLength,editLength);
+        etFechaFin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(DATE_ID);
+            }
+        });
+
+
+        etFechaInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog(DATE_ID);
+            }
+        });
 
         setUpView();
 
@@ -194,5 +229,30 @@ public class ProyectoActivity extends AppCompatActivity {
         });
 
     }
+    //DatePicker de Proeyectos
 
+    private void colocar_fecha() {
+        etFechaInicio.setText (mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");
+        etFechaFin.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");
+    }
+
+    private DatePickerDialog.OnDateSetListener mDateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
+                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    mYearIni = year;
+                    mMonthIni = monthOfYear;
+                    mDayIni = dayOfMonth;
+                    colocar_fecha();
+
+                }
+
+            };
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_ID:
+                return new DatePickerDialog(this, mDateSetListener, sYearIni, sMonthIni, sDayIni);
+        }
+        return null;
+    }
 }

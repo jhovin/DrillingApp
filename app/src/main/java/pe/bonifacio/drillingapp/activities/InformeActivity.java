@@ -1,14 +1,18 @@
 package pe.bonifacio.drillingapp.activities;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -30,6 +34,10 @@ public class InformeActivity extends AppCompatActivity {
     private EditText etLecHorometro;
     private EditText etEvento;
     private EditText etFechaInforme;
+    private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
+    static final int DATE_ID = 0;
+    Calendar C = Calendar.getInstance();
+
     private EditText etObservacion;
     private Button btCrearInforme;
     private Button btVerInformes;
@@ -40,6 +48,20 @@ public class InformeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informe);
+        sMonthIni = C.get(Calendar.MONTH);
+        sDayIni = C.get(Calendar.DAY_OF_MONTH);
+        sYearIni = C.get(Calendar.YEAR);
+
+        EditText etFechaInforme=findViewById(R.id.etFecha_informe);
+        int textLength = etFechaInforme.getText().length();
+        etFechaInforme.setSelection(textLength,textLength);
+        etFechaInforme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(DATE_ID);
+            }
+        });
+
 
         informe();
     }
@@ -168,6 +190,31 @@ public class InformeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void colocar_fecha(){
+
+        etFechaInforme.setText (mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");
+    }
+    private DatePickerDialog.OnDateSetListener mDateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
+                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    mYearIni = year;
+                    mMonthIni = monthOfYear;
+                    mDayIni = dayOfMonth;
+                    colocar_fecha();
+
+                }
+
+            };
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_ID:
+                return new DatePickerDialog(this, mDateSetListener, sYearIni, sMonthIni, sDayIni);
+        }
+
+        return null;
     }
 
 }
