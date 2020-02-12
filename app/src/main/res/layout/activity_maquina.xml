@@ -79,6 +79,7 @@
                         android:layout_below="@+id/Fecha_inicio"
                         android:layout_width="match_parent"
                         android:inputType="date"
+                        android:focusable="false"
                         android:layout_height="wrap_content"
                         android:hint="dd/mm/yyyy" />
                 </android.support.design.widget.TextInputLayout>
