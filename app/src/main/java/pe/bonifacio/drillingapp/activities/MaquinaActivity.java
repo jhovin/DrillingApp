@@ -194,7 +194,7 @@ public class MaquinaActivity extends AppCompatActivity {
     });
 
 }
-
+    //Date Picker de Máquina
     public void colocar_fecha(){
 
         etFechaMaquina.setText (mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");

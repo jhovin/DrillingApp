@@ -194,7 +194,7 @@ public class InformeActivity extends AppCompatActivity {
         });
 
     }
-
+    //DatePicker de Informe
     public void colocar_fecha() {
 
         etFechaInforme.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni + " ");
