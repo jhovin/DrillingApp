@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -33,9 +35,11 @@ public class ListaInformesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_informes);
 
+
+
+
         informesList = findViewById(R.id.recyclerview);
         informesList.setLayoutManager(new LinearLayoutManager(this));
-
         informesList.setAdapter(new InformesAdapter());
 
         swipeRefreshLayout=findViewById(R.id.swiperefresh_lista_informes);
@@ -63,6 +67,7 @@ public class ListaInformesActivity extends AppCompatActivity {
                         InformesAdapter adapter = (InformesAdapter) informesList.getAdapter();
                         adapter.setInformes(informes);
                         adapter.notifyDataSetChanged();
+                        Collections.reverse(informes);
                         Toast.makeText(ListaInformesActivity.this, "Lista de Informes Diarios", Toast.LENGTH_SHORT).show();
                     } else {
                         throw new Exception(ApiServiceGenerator.parseError(response).getMessage());
@@ -82,8 +87,6 @@ public class ListaInformesActivity extends AppCompatActivity {
                 Toast.makeText(ListaInformesActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
-
         });
     }
-
 }

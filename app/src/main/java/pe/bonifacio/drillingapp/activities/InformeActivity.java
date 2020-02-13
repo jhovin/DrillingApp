@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -37,6 +38,8 @@ public class InformeActivity extends AppCompatActivity {
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
     static final int DATE_ID = 0;
     Calendar C = Calendar.getInstance();
+
+
 
     private EditText etObservacion;
     private Button btCrearInforme;
@@ -192,11 +195,14 @@ public class InformeActivity extends AppCompatActivity {
 
     }
 
-    public void colocar_fecha(){
+    public void colocar_fecha() {
 
-        etFechaInforme.setText (mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");
+        etFechaInforme.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni + " ");
+
+
+
     }
-    private DatePickerDialog.OnDateSetListener mDateSetListener =
+    private DatePickerDialog.OnDateSetListener datePickerListener =
             new DatePickerDialog.OnDateSetListener() {
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                     mYearIni = year;
@@ -211,7 +217,9 @@ public class InformeActivity extends AppCompatActivity {
     protected Dialog onCreateDialog(int id) {
         switch (id) {
             case DATE_ID:
-                return new DatePickerDialog(this, mDateSetListener, sYearIni, sMonthIni, sDayIni);
+                return new DatePickerDialog(this, datePickerListener,
+                        sYearIni, sMonthIni, sDayIni);
+
         }
 
         return null;
