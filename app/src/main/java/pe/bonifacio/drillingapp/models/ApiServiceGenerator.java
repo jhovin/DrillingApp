@@ -43,7 +43,7 @@ public class ApiServiceGenerator {
             Converter<ResponseBody, ApiError> converter = retrofit.responseBodyConverter(ApiError.class, new Annotation[0]);
             return converter.convert(response.errorBody());
         } catch (IOException e) {
-            return new ApiError("Error en el servidor");
+            return new ApiError("Error en el Servicio");
         }
     }
 }

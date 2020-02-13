@@ -159,7 +159,7 @@ public class PerfilActivity extends AppCompatActivity {
             etPassword.requestFocus();
             return;
         }
-        if (password.isEmpty()){
+        if (password.length()<6){
             etPassword.setError(getResources().getString(R.string.password_error_less_than));
             etPassword.requestFocus();
             return;
