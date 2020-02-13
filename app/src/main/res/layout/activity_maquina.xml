@@ -81,7 +81,7 @@
                         android:inputType="date"
                         android:focusable="false"
                         android:layout_height="wrap_content"
-                        android:hint="dd/mm/yyyy" />
+                        android:hint="Ingrese Fecha de Inicio" />
                 </android.support.design.widget.TextInputLayout>
 
                 <TextView
@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:hint="Ingrese Nombre del la Máquina" />
+                        android:hint="Ingrese Nombre de Máquina" />
 
                 </android.support.design.widget.TextInputLayout>
 

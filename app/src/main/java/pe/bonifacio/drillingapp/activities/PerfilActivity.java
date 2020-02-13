@@ -1,6 +1,7 @@
 package pe.bonifacio.drillingapp.activities;
 
 import android.content.Intent;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
