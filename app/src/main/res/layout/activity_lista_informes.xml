@@ -17,11 +17,18 @@
         android:textColor="#ffffff"
         android:background="#464646"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_height="match_parent"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh_lista_informes"
         android:layout_width="match_parent"
-        android:background="@color/colorBlanco"
         android:layout_below="@+id/titulo_informes"
-        android:id="@+id/recyclerview"/>
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:background="@color/colorBlanco"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

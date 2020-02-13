@@ -1,6 +1,7 @@
 package pe.bonifacio.drillingapp.activities;
 
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ public class ListaMaquinasActivity extends AppCompatActivity {
 
     private static final String TAG=ListaMaquinasActivity.class.getSimpleName();
     private RecyclerView maquinasList;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -35,10 +37,19 @@ public class ListaMaquinasActivity extends AppCompatActivity {
 
         maquinasList.setAdapter(new MaquinasAdapter());
 
+        swipeRefreshLayout=findViewById(R.id.swiperefresh_lista_maquinas);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initialize();
+            }
+        });
+
         initialize();
     }
     public  void initialize(){
 
+        swipeRefreshLayout.setRefreshing(true);
         WebServiceApi service = ApiServiceGenerator.createService(WebServiceApi.class);
 
         service.getTodasLasMaquinas().enqueue(new Callback<List<Maquina>>() {
@@ -63,6 +74,8 @@ public class ListaMaquinasActivity extends AppCompatActivity {
                 } catch (Throwable t) {
                     Log.e(TAG, "onThrowable: " + t.getMessage(), t);
                     Toast.makeText(ListaMaquinasActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                }finally {
+                    swipeRefreshLayout.setRefreshing(false);
                 }
             }
 
@@ -70,6 +83,7 @@ public class ListaMaquinasActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<List<Maquina>> call, @NonNull Throwable t) {
                 Log.e(TAG, "onFailure: " + t.getMessage(), t);
                 Toast.makeText(ListaMaquinasActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                swipeRefreshLayout.setRefreshing(false);
             }
 
         });

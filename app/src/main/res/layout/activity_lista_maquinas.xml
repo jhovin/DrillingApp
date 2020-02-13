@@ -16,6 +16,11 @@
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:background="#464646"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh_lista_maquinas"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/titulo_maquinas"
+        android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
@@ -23,5 +28,6 @@
         android:background="@color/colorBlanco"
         android:layout_below="@+id/titulo_maquinas"
         android:id="@+id/recyclerview"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
