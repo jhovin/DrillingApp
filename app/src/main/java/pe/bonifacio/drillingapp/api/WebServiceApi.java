@@ -3,6 +3,7 @@ package pe.bonifacio.drillingapp.api;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.models.ApiMessage;
+import pe.bonifacio.drillingapp.models.Asignacion;
 import pe.bonifacio.drillingapp.models.Informe;
 import pe.bonifacio.drillingapp.models.Maquina;
 import pe.bonifacio.drillingapp.models.Proyecto;
@@ -83,6 +84,11 @@ public interface WebServiceApi {
     @GET("/api/informes/{infoid}")
     Call<Informe>showInforme(@Path("infoid") Long infoid);
 
+    /*
+     Asignaciones
+     */
+    @POST("api/asignaciones")
+    Call<Void>crearAsignacion(@Body Asignacion asignacion);
 
 
 

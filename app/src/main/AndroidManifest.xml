@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.AsignarActivity"></activity>
         <activity android:name=".activities.DetailActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>

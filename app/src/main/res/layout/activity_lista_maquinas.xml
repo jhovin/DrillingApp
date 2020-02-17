@@ -29,5 +29,14 @@
         android:layout_below="@+id/titulo_maquinas"
         android:id="@+id/recyclerview"/>
     </android.support.v4.widget.SwipeRefreshLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_showRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#FFA726"
+        android:src="@android:drawable/ic_menu_add"/>
 
 </RelativeLayout>
