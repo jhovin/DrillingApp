@@ -64,6 +64,7 @@ public class AsignarActivity extends AppCompatActivity {
                     Log.d("TAG1", "Maquina creado correctamente");
                     Toast.makeText(AsignarActivity.this, "Máquina asignada correctamente", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),ListaMaquinasActivity.class));
+                    finish();
                 }
 
             }

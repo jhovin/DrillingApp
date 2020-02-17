@@ -1,5 +1,7 @@
 package pe.bonifacio.drillingapp.activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
