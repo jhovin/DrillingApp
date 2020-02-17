@@ -61,7 +61,7 @@ public class AsignarActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.code() == 201) {
-                    Log.d("TAG1", "Maquina creado correctamente");
+                    Log.d("TAG1", "Maquina asignada correctamente");
                     Toast.makeText(AsignarActivity.this, "Máquina asignada correctamente", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),ListaMaquinasActivity.class));
                     finish();
