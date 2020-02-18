@@ -54,7 +54,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="REGISTRO MÁQUINAS"
+                    android:text="REGISTRO DE MÁQUINAS"
                     android:textColor="@color/colorBlack"
                     android:textSize="25sp"
                     android:gravity="center"

@@ -36,7 +36,7 @@
             tools:text="Nombre de las Máquinas"/>
         <TextView
             android:id="@+id/tipo_maquina_text"
-            android:layout_width="match_parent"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/foto_image"
             android:layout_below="@+id/nombre_maquina_text"
@@ -51,6 +51,7 @@
             android:layout_height="30dp"
             app:srcCompat="@drawable/ic_menu_dots"
             android:paddingStart="8dp"
+            android:layout_marginBottom="5dp"
             android:paddingEnd="8dp"
             android:layout_alignParentEnd="true"
             android:background="@null"/>

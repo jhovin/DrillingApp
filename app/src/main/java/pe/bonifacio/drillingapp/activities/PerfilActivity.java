@@ -74,6 +74,7 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ProyectoActivity.class));
+                Toast.makeText(PerfilActivity.this, "Registro de Proyecto", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,11 +102,26 @@ public class PerfilActivity extends AppCompatActivity {
 
     }
 
-    public void logout(){
-        SharedPrefManager.getInstance(getApplicationContext()).logOut();
-        Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+    public void logout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);
+        builder.setTitle("¿Deseas cerrar sesión?");
+        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setNeutralButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                SharedPrefManager.getInstance(getApplicationContext()).logOut();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
@@ -201,28 +217,43 @@ public class PerfilActivity extends AppCompatActivity {
         });
     }
     //Eliminar USUARIO
-    public void deleteById(){
-        Call<Void>call=WebService
-                .getInstance()
-                .createService()
-                .deleteById(usuario.getId());
-        call.enqueue(new Callback<Void>() {
+    public void deleteById() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);
+        builder.setTitle("¿Estas seguro de eliminar usuario?");
+        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if(response.code() == 200){
-                    Log.d("TAG1", "Usuario eliminado correctamente");
-                    Toast.makeText(PerfilActivity.this, "Usuario eliminado correctamente", Toast.LENGTH_SHORT).show();
-                    logout();
-                }else{
-                    Log.d("TAG1", "Error no definido");
-                }
-            }
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onClick(DialogInterface dialog, int which) {
 
             }
         });
-    }
+        builder.setNeutralButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
+                Call<Void>call=WebService
+                        .getInstance()
+                        .createService()
+                        .deleteById(usuario.getId());
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        if(response.code() == 200){
+                            Log.d("TAG1", "Usuario eliminado correctamente");
+                            Toast.makeText(PerfilActivity.this, "Usuario eliminado correctamente", Toast.LENGTH_SHORT).show();
+                            logout();
+                        }else{
+                            Log.d("TAG1", "Error no definido");
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
+        AlertDialog alert1 = builder.create();
+        alert1.show();
+    }
 
 }

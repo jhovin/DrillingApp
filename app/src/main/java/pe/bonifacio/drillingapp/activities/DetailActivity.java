@@ -69,8 +69,6 @@ public class DetailActivity extends AppCompatActivity {
 
                         Informe informe = response.body();
                         Log.d(TAG, "informe: " + informe);
-                        Toast.makeText(DetailActivity.this, "Detalles", Toast.LENGTH_SHORT).show();
-
 
                         tvSistema.setText(informe.getSistema());
                         tvDescripcion.setText(informe.getDescripcion());

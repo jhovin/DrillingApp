@@ -68,6 +68,10 @@ public interface WebServiceApi {
     @GET("api/maquinas")
     Call<List<Maquina>>getTodasLasMaquinas();
 
+    @GET("api/maquinas/{id}")
+    Call<Maquina>showMaquina(@Path("id")Long id);
+
+
     @DELETE("api/maquinas/{id}")
     Call<ApiMessage>destroyMaquina(@Path("id")Long id);
 

@@ -212,12 +212,12 @@ public class ProyectoActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Proyecto>>() {
             @Override
             public void onResponse(Call<List<Proyecto>> call, Response<List<Proyecto>> response) {
-                if(response.code()==200){
-                    for(int i=0; i<response.body().size(); i++){
-                        Log.d("TAG1", "Nombre Proyecto: " + response.body().get(i).getNombre()
-                                + "  Codigo Usuario: " + response.body().get(i).getProusuario());
-                    }
-                }else if(response.code()==404){
+                    if(response.code()==200){
+                        for(int i=0; i<response.body().size(); i++){
+                            Log.d("TAG1", "Nombre Proyecto: " + response.body().get(i).getNombre()
+                                    + "  Codigo Usuario: " + response.body().get(i).getProusuario());
+                        }
+                    }else if(response.code()==404){
                     Log.d("TAG1", "No hay proyectos");
                     Toast.makeText(ProyectoActivity.this, "No hay proyectos", Toast.LENGTH_SHORT).show();
                 }
@@ -229,7 +229,7 @@ public class ProyectoActivity extends AppCompatActivity {
         });
 
     }
-    //DatePicker de Proeyectos
+    //DatePicker de Proyectos//
 
     private void colocar_fecha() {
         etFechaInicio.setText (mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni+" ");
