@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:padding="20dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp">
@@ -33,9 +33,9 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="300dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp"
                     android:backgroundTint="@color/colorBlack"
                     android:src="@drawable/ic_registro"
                     />

@@ -17,7 +17,7 @@
             android:id="@+id/btVerInformes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/gradient_bt"
             android:text="Ver Informe diario"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/btVerInformes"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp">
