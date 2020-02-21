@@ -195,20 +195,15 @@ public class InformeActivity extends AppCompatActivity {
 
     }
     //DatePicker de Informe
-    public void colocar_fecha() {
 
-        etFechaInforme.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni + " ");
-
-
-
-    }
     private DatePickerDialog.OnDateSetListener datePickerListener =
             new DatePickerDialog.OnDateSetListener() {
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                     mYearIni = year;
                     mMonthIni = monthOfYear;
                     mDayIni = dayOfMonth;
-                    colocar_fecha();
+                    etFechaInforme.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni + " ");
+
 
                 }
 
@@ -217,9 +212,12 @@ public class InformeActivity extends AppCompatActivity {
     protected Dialog onCreateDialog(int id) {
         switch (id) {
             case DATE_ID:
-                return new DatePickerDialog(this, datePickerListener,
-                        sYearIni, sMonthIni, sDayIni);
-
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this, datePickerListener, mYearIni, mMonthIni, mDayIni);
+                Calendar calendar = Calendar.getInstance();
+                calendar.add(Calendar.DATE, 0); // Add 0 days to Calendar
+                Date newDate = calendar.getTime();
+                datePickerDialog.getDatePicker().setMinDate(newDate.getTime()-(newDate.getTime()%(24*60*60*1000)));
+                return datePickerDialog;
         }
 
         return null;

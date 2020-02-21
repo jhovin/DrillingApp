@@ -101,7 +101,7 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
     }
-
+    //Cerrar Sesión
     public void logout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);
         builder.setTitle("¿Deseas cerrar sesión?");
@@ -132,7 +132,7 @@ public class PerfilActivity extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
         }
     }
-    //Actualiza USUARIO
+    //Actualizar USUARIO
     public void updateUsuario(){
         String email = etEmail.getText().toString().trim();
         String name = etName.getText().toString().trim();
@@ -188,34 +188,49 @@ public class PerfilActivity extends AppCompatActivity {
         usuario.setDni(dni);
         usuario.setPassword(password);
 
-        Call<Usuario> call = WebService
-                .getInstance()
-                .createService(WebServiceApi.class)
-                .update(usuario);
-        call.enqueue(new Callback<Usuario>() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);
+        builder.setTitle("¿Deseas actualizar Usuario?");
+        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
             @Override
-            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                if(response.code() == 200){
-                    Log.d("TAG1", "Usuario actualizado correctamente");
-                    SharedPrefManager.getInstance(getApplicationContext())
-                            .saveUsuario(response.body());
-                    Toast.makeText(PerfilActivity.this, "Usuario Actualizado", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-
-                }else if(response.code()==400){
-                    Log.d("TAG1", "Usuario no existe");
-                    Toast.makeText(PerfilActivity.this, "Usuario no existe", Toast.LENGTH_SHORT).show();
-                }else{
-                    Log.d("TAG1", "Error indeterminado");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
+            public void onClick(DialogInterface dialog, int which) {
 
             }
         });
+        builder.setNeutralButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Call<Usuario> call = WebService
+                        .getInstance()
+                        .createService(WebServiceApi.class)
+                        .update(usuario);
+                call.enqueue(new Callback<Usuario>() {
+                    @Override
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                        if (response.code() == 200) {
+                            Log.d("TAG1", "Usuario actualizado correctamente");
+                            SharedPrefManager.getInstance(getApplicationContext())
+                                    .saveUsuario(response.body());
+                            Toast.makeText(PerfilActivity.this, "Usuario Actualizado", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+                        } else if (response.code() == 400) {
+                            Log.d("TAG1", "Usuario no existe");
+                            Toast.makeText(PerfilActivity.this, "Usuario no existe", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Log.d("TAG1", "Error indeterminado");
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
+        AlertDialog alert1 = builder.create();
+        alert1.show();
     }
+
     //Eliminar USUARIO
     public void deleteById() {
         AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);

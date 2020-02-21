@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import pe.bonifacio.drillingapp.R;
@@ -214,18 +215,14 @@ public class ProyectoActivity extends AppCompatActivity {
 
     //DatePicker de Proyectos//
 
-    private void colocar_fecha() {
-        etFechaInicio.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni + " ");
-    }
-
     private DatePickerDialog.OnDateSetListener mDateSetListener =
             new DatePickerDialog.OnDateSetListener() {
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                     mYearIni = year;
                     mMonthIni = monthOfYear;
                     mDayIni = dayOfMonth;
-                    colocar_fecha();
-                }
+                    etFechaInicio.setText(mDayIni + "/" + (mMonthIni + 1) + "/" + mYearIni);
+                 }
 
             };
 
@@ -233,7 +230,12 @@ public class ProyectoActivity extends AppCompatActivity {
     protected Dialog onCreateDialog(int id) {
         switch (id) {
             case DATE_ID:
-                return new DatePickerDialog(this, mDateSetListener, sYearIni, sMonthIni, sDayIni);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this, mDateSetListener, mYearIni, mMonthIni, mDayIni);
+                Calendar calendar = Calendar.getInstance();
+                calendar.add(Calendar.DATE, 0); // Add 0 days to Calendar
+                Date newDate = calendar.getTime();
+                datePickerDialog.getDatePicker().setMinDate(newDate.getTime()-(newDate.getTime()%(24*60*60*1000)));
+                return datePickerDialog;
         }
         return null;
 
